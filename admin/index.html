@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Admin — NGL Town Square</title>
+<link rel="stylesheet" href="../site.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/nogaslabs-site/js/db.js"></script>
+<script src="/nogaslabs-site/js/admin-gate.js"></script>
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="wrap"><nav class="nav" aria-label="Primary">
+  <a href="../">Home</a><a href="./">Admin</a><a href="../press/">Press</a><a href="../relics/">Relics</a><a href="../campaign/">Campaign</a>
+</nav></header>
+<main id="main" class="wrap">
+  <h1>Admin Control Panel</h1>
+  <div class="grid">
+    <div class="card">
+      <h2>NPCs</h2>
+      <p><button id="npc_reload" class="CTA">Reload</button> <button id="npc_new" class="CTA">New</button></p>
+      <pre id="npc_list" class="card" style="max-height:240px;overflow:auto"></pre>
+    </div>
+    <div class="card">
+      <h2>World Flags</h2>
+      <p><button id="flag_reload" class="CTA">Reload</button> <button id="flag_set" class="CTA">Set Flag</button></p>
+      <pre id="flag_list" class="card" style="max-height:240px;overflow:auto"></pre>
+    </div>
+  </div>
+</main>
+<footer class="wrap foot">Admins only.</footer>
+<script src="./admin.js"></script>
+</body></html>

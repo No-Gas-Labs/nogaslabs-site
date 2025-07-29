@@ -37,3 +37,7 @@ Site map
 
 Scripts
 - `scripts/new-press.sh` helps create and index new press releases.
+
+## Dynamic layer (Supabase)
+This site can sync game saves and provide an admin console using Supabase (Auth + Postgres).  
+Set `window.NGL_SUPABASE_URL` and `window.NGL_SUPABASE_ANON_KEY` before loading `/js/db.js`, or edit them inside that file. Admin access is granted via user metadata (`is_admin: true`) or app role `admin`. See `DOCS/SUPABASE.md`.
