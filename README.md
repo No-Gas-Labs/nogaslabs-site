@@ -10,6 +10,19 @@ python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
+## ⚙️ Dev Environment Setup
+```bash
+git clone https://github.com/No-Gas-Labs/nogaslabs-site.git
+cd nogaslabs-site
+npx serve
+```
+Run the CI checks locally:
+```bash
+pip install html5validator
+html5validator --root . --also-check-css --blacklist ".git,.github"
+scripts/link-check.sh .
+```
+
 Structure
 
 index.html, about.html

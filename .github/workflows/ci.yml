@@ -1,0 +1,21 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: pip install html5validator
+      - run: html5validator --root . --also-check-css --blacklist ".git,.github"
+      - name: link check
+        run: |
+          if [ -x scripts/link-check.sh ]; then
+            scripts/link-check.sh .
+          else
+            echo "link check script not found"
+          fi
