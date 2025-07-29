@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>No_Gas_Labs Press</title>
+  <link>https://no-gas-labs.github.io/nogaslabs-site/press/</link>
+  <description>Press releases from No_Gas_Labs</description>
+  <item>
+    <title>001 - Mirror's Edge</title>
+    <link>https://no-gas-labs.github.io/nogaslabs-site/press/001-mirrors-edge.html</link>
+    <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+    <description>First release outlining the vision for No_Gas_Labs.</description>
+    <guid>001</guid>
+  </item>
+</channel>
+</rss>

@@ -2,6 +2,8 @@
 
 Static site for press releases, relics, and campaign info.
 
+Value proposition: Rebuild what breaks people and share the fixes.
+
 ## Develop locally
 ```bash
 python3 -m http.server 8080
@@ -22,3 +24,11 @@ Deploy
 
 Enable GitHub Pages: Settings → Pages → Source: main / root.
 Site: https://no-gas-labs.github.io/nogaslabs-site/.
+
+Site map
+- Home
+- About
+- Press (001 live)
+- Relics
+- Campaign
+- Press Kit
