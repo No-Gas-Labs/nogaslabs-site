@@ -1,0 +1,3 @@
+Contact: mailto:press@nogaslabs.com
+Preferred-Languages: en
+Policy: https://no-gas-labs.github.io/nogaslabs-site/

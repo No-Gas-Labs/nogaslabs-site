@@ -7,3 +7,6 @@
 - Accessibility pass (contrast tokens + keyboard check)
 - RSS feed for Press (/press/feed.xml)
 - Press Kit assets (headshot, vector logo)
+- Add OG image generator (SVG to PNG fallback).
+- Keyboard-only pass on Press pages.
+- Press 002 draft + schedule.
