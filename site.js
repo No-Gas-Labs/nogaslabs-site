@@ -4,3 +4,10 @@
   const bump=()=>{ xp+=1; localStorage.setItem(k,String(xp)); el.textContent=xp; };
   bump(); setInterval(bump,5000);
 })();
+(function(){
+  const cur=location.pathname.replace(/index\.html$/,"");
+  document.querySelectorAll('.nav a').forEach(a=>{
+    const path=new URL(a.getAttribute('href'),location).pathname.replace(/index\.html$/,'');
+    if(path===cur){a.setAttribute('aria-current','page');}
+  });
+})();
