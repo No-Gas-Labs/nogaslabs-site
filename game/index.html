@@ -11,6 +11,10 @@
 <meta property="og:url" content="https://no-gas-labs.github.io/nogaslabs-site/game/">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; base-uri 'self'; form-action 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/nogaslabs-site/js/db.js"></script>
+<script src="/nogaslabs-site/js/auth-ui.js"></script>
+<script src="/nogaslabs-site/js/admin-gate.js"></script>
 </head><body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="wrap"><nav class="nav" aria-label="Primary">
@@ -19,7 +23,7 @@
 <main id="main" class="wrap">
   <h1>NGL Quest v0.1</h1>
   <p class="muted">WASD/Arrows: move • E: interact • Esc: pause • Mobile: on-screen controls</p>
-  <div class="hud">
+  <div class="hud"><button id="signin" class="btn">Sign in</button>
     <span>HP: <b id="hp">10</b></span>
     <span>XP: <b id="xp">0</b></span>
     <span>Bag: <b id="bag">sticks:0, coins:0</b></span>

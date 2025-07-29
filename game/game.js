@@ -32,7 +32,10 @@ const resumeBtn=document.getElementById('resume');
 const touch=document.getElementById('touch');
 
 // ----- Helpers -----
-function save(){ try{ localStorage.setItem(SAVE_K, JSON.stringify(state)); }catch(e){} }
+function save(){
+  try{ localStorage.setItem(SAVE_K, JSON.stringify(state)); }catch(e){}
+  if(typeof saveCloud==='function') saveCloud(1);
+}
 function load(){ try{ return JSON.parse(localStorage.getItem(SAVE_K)||" "); }catch(e){ return null; } }
 function bumpXP(){ try{ const v=parseInt(localStorage.getItem(XP_K)||"0",10)+1; localStorage.setItem(XP_K,String(v)); }catch(e){} }
 
@@ -138,3 +141,25 @@ function loop(t){
 togglePause(); paused=false; // ensure dialog closed
 requestAnimationFrame(loop);
 })();
+
+// ----- Cloud save glue (Supabase) -----
+async function saveCloud(slot){
+  try{
+    const sess = await (window.sbGetSession? window.sbGetSession(): null);
+    if(!sess) return; // not signed in
+    const payload = { slot: slot||1, data: state, updated_at: new Date().toISOString() };
+    await SB.from('saves').upsert(payload, { onConflict:'user_id,slot' });
+  }catch(e){ /* ignore for now */ }
+}
+async function loadCloud(slot){
+  try{
+    const sess = await (window.sbGetSession? window.sbGetSession(): null);
+    if(!sess) return null;
+    const { data, error } = await SB.from('saves').select('data').eq('slot', slot||1).single();
+    if(error) return null;
+    return data?.data || null;
+  }catch(e){ return null; }
+}
+// attempt cloud load on boot
+loadCloud(1).then(d=>{ if(d){ state=d; }});
+document.getElementById('signin')?.addEventListener('click',()=>window.openAuth && window.openAuth());
