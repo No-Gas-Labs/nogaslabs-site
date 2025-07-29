@@ -1,4 +1,8 @@
 <!doctype html>
+<!--
+Fill in the placeholders below and save as NNN-slug.html.
+Use scripts/new-press.sh for automation: ./scripts/new-press.sh 002 new-agenda
+-->
 <html lang="en"><head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>{{TITLE}}</title>
