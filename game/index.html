@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>NGL Quest v0.1 — No_Gas_Labs</title>
+<link rel="stylesheet" href="game.css">
+<link rel="alternate" type="application/rss+xml" href="/press/feed.xml" title="No_Gas_Labs Press">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://no-gas-labs.github.io/nogaslabs-site/game/">
+<meta property="og:title" content="NGL Quest v0.1">
+<meta property="og:description" content="A tiny, old-school canvas RPG demo you can play in your browser.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://no-gas-labs.github.io/nogaslabs-site/game/">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; base-uri 'self'; form-action 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="wrap"><nav class="nav" aria-label="Primary">
+  <a href="../">Home</a><a href="./">Game</a><a href="../press/">Press</a><a href="../relics/">Relics</a><a href="../campaign/">Campaign</a>
+</nav></header>
+<main id="main" class="wrap">
+  <h1>NGL Quest v0.1</h1>
+  <p class="muted">WASD/Arrows: move • E: interact • Esc: pause • Mobile: on-screen controls</p>
+  <div class="hud">
+    <span>HP: <b id="hp">10</b></span>
+    <span>XP: <b id="xp">0</b></span>
+    <span>Bag: <b id="bag">sticks:0, coins:0</b></span>
+    <button id="reset" class="btn">Reset Save</button>
+  </div>
+  <div class="stage">
+    <canvas id="game" width="640" height="384" aria-label="Game canvas" role="img"></canvas>
+    <div class="touch" id="touch">
+      <button data-dpad="up" aria-label="Move up">▲</button>
+      <div><button data-dpad="left">◀</button><button data-dpad="interact">E</button><button data-dpad="right">▶</button></div>
+      <button data-dpad="down" aria-label="Move down">▼</button>
+    </div>
+  </div>
+  <dialog id="pause"><h2>Paused</h2>
+    <p>Controls: WASD/Arrows to move, E to interact. On mobile use the d-pad and E.</p>
+    <button id="resume" class="btn">Resume</button>
+  </dialog>
+</main>
+<footer class="wrap foot">Paid for by Damien Edward Featherstone for President (2028).</footer>
+<script src="game.js"></script>
+</body></html>
