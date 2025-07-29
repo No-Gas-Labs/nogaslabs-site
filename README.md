@@ -32,3 +32,8 @@ Site map
 - Relics
 - Campaign
 - Press Kit
+- [RSS Feed](https://no-gas-labs.github.io/nogaslabs-site/press/feed.xml)
+- [Press Kit](https://no-gas-labs.github.io/nogaslabs-site/press/kit.html)
+
+Scripts
+- `scripts/new-press.sh` helps create and index new press releases.

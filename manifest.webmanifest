@@ -1,0 +1,4 @@
+{ "name":"No_Gas_Labs", "short_name":"NGL",
+  "start_url":"/nogaslabs-site/", "display":"standalone",
+  "background_color":"#0f0f10", "theme_color":"#0f0f10",
+  "icons":[{ "src":"/nogaslabs-site/assets/favicon.svg", "sizes":"64x64", "type":"image/svg+xml" }] }
