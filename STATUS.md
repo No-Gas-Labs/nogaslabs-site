@@ -1,7 +1,7 @@
-Last task: 2
+Last task: 5
 Last pass: PASS
 Live URL: https://no-gas-labs.github.io/nogaslabs-site/
 Next tasks:
-3. Ensure robots meta and OG tags on other pages.
-4. Add aria-current script.
-5. Improve campaign copy.
+6. Add skip link and meta tags to 404 page.
+7. Audit all images for alt text.
+8. Ensure color contrast ratios meet WCAG guidelines.
