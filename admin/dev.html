@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Dev — Sync Link</title>
+<link rel="stylesheet" href="../site.css">
+<style>.mono{font-family:ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap}</style>
+</head><body class="wrap">
+<nav class="nav"><a href="../">Home</a><a href="./">Admin</a><a href="./dev.html" aria-current="page">Dev</a></nav>
+<h1>Sync Link</h1>
+<p>Heartbeat + recent tasks. This page reads <code>/.codex/heartbeat.json</code> and <code>/TASKS_LOG.md</code>.</p>
+<div class="grid">
+  <div class="card"><h2>Heartbeat</h2><pre id="hb" class="mono">Loading…</pre></div>
+  <div class="card"><h2>Recent Tasks</h2><pre id="log" class="mono">Loading…</pre></div>
+</div>
+<script>
+(async ()=>{
+  const base = location.pathname.replace(/\/admin\/dev\.html$/, '/');
+  const hb = await fetch(base+'.codex/heartbeat.json', {cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null);
+  document.getElementById('hb').textContent = hb ? JSON.stringify(hb,null,2) : 'No heartbeat yet.';
+  const lg = await fetch(base+'TASKS_LOG.md', {cache:'no-store'}).then(r=>r.ok?r.text():'').catch(()=> '');
+  document.getElementById('log').textContent = lg || 'No log yet.';
+})();
+</script>
+</body></html>
