@@ -1,0 +1,246 @@
+From e4aa2afd33f3aae9f73c3dffde72722015b99c21 Mon Sep 17 00:00:00 2001
+From: Codex <codex@openai.com>
+Date: Tue, 29 Jul 2025 07:22:43 +0000
+Subject: [PATCH 1/2] a11y(skip-link): add skip links and link checker
+
+---
+ REPORT.md                   |  3 +++
+ STATUS.md                   |  7 +++++++
+ TASKS_LOG.md                |  5 +++++
+ about.html                  |  1 +
+ campaign/index.html         |  1 +
+ press/001-mirrors-edge.html |  1 +
+ press/002-new-agenda.html   |  1 +
+ press/index.html            |  1 +
+ press/kit.html              |  1 +
+ relics/index.html           |  1 +
+ scripts/link-check.sh       | 19 +++++++++++++++++++
+ 11 files changed, 41 insertions(+)
+ create mode 100644 REPORT.md
+ create mode 100644 STATUS.md
+ create mode 100644 TASKS_LOG.md
+ create mode 100755 scripts/link-check.sh
+
+diff --git a/REPORT.md b/REPORT.md
+new file mode 100644
+index 0000000..22da4c8
+--- /dev/null
++++ b/REPORT.md
+@@ -0,0 +1,3 @@
++# Sprint 0
++
++- Start repository maintenance.
+diff --git a/STATUS.md b/STATUS.md
+new file mode 100644
+index 0000000..b01994c
+--- /dev/null
++++ b/STATUS.md
+@@ -0,0 +1,7 @@
++Last task: 1
++Last pass: PASS
++Live URL: https://no-gas-labs.github.io/nogaslabs-site/
++Next tasks:
++2. Add canonical and robots meta to about.html.
++3. Add OG tags to about.html.
++4. Ensure robots/OG tags on all pages.
+diff --git a/TASKS_LOG.md b/TASKS_LOG.md
+new file mode 100644
+index 0000000..f50803a
+--- /dev/null
++++ b/TASKS_LOG.md
+@@ -0,0 +1,5 @@
++# Tasks Log
++
++1. [SiteKeeper -> Production/Build] Added skip links to main pages for better keyboard navigation; added link check script.
++   Files: about.html, press/*.html, relics/index.html, campaign/index.html, press/index.html, press/kit.html, scripts/link-check.sh, STATUS.md, TASKS_LOG.md, REPORT.md
++   Result: PASS
+diff --git a/about.html b/about.html
+index 4d71617..bf7f3e6 100644
+--- a/about.html
++++ b/about.html
+@@ -4,6 +4,7 @@
+ <title>About — No_Gas_Labs</title>
+ <link rel="stylesheet" href="site.css">
+ </head><body>
++  <a class="skip" href="#main">Skip to content</a>
+ <header class="wrap"><nav class="nav">
+   <a href="./">Home</a><a href="./about.html">About</a>
+   <a href="./press/">Press</a><a href="./relics/">Relics</a><a href="./campaign/">Campaign</a>
+diff --git a/campaign/index.html b/campaign/index.html
+index 117aee3..50e5f96 100644
+--- a/campaign/index.html
++++ b/campaign/index.html
+@@ -6,6 +6,7 @@
+ <link rel="canonical" href="https://no-gas-labs.github.io/nogaslabs-site/campaign/">
+ <meta name="description" content="Updates and goals for the No_Gas_Labs campaign.">
+ </head><body>
++  <a class="skip" href="#main">Skip to content</a>
+ <header class="wrap"><nav class="nav">
+   <a href="../">Home</a><a href="../about.html">About</a>
+   <a href="../press/">Press</a><a href="../relics/">Relics</a><a href="../campaign/">Campaign</a>
+diff --git a/press/001-mirrors-edge.html b/press/001-mirrors-edge.html
+index 0b87b13..5a810b3 100644
+--- a/press/001-mirrors-edge.html
++++ b/press/001-mirrors-edge.html
+@@ -7,6 +7,7 @@
+ <link rel="canonical" href="https://no-gas-labs.github.io/nogaslabs-site/press/001-mirrors-edge.html">
+ <meta name="robots" content="index,follow">
+ </head><body>
++  <a class="skip" href="#main">Skip to content</a>
+ <header class="wrap"><nav class="nav">
+   <a href="../">Home</a><a href="../about.html">About</a>
+   <a href="../press/">Press</a><a href="../relics/">Relics</a><a href="../campaign/">Campaign</a>
+diff --git a/press/002-new-agenda.html b/press/002-new-agenda.html
+index 584b6c8..ef32c75 100644
+--- a/press/002-new-agenda.html
++++ b/press/002-new-agenda.html
+@@ -7,6 +7,7 @@
+ <link rel="canonical" href="https://no-gas-labs.github.io/nogaslabs-site/press/002-new-agenda.html">
+ <meta name="robots" content="index,follow">
+ </head><body>
++  <a class="skip" href="#main">Skip to content</a>
+ <header class="wrap"><nav class="nav">
+   <a href="../">Home</a><a href="../about.html">About</a>
+   <a href="../press/">Press</a><a href="../relics/">Relics</a><a href="../campaign/">Campaign</a>
+diff --git a/press/index.html b/press/index.html
+index 98324a1..90e7d4b 100644
+--- a/press/index.html
++++ b/press/index.html
+@@ -7,6 +7,7 @@
+ <link rel="canonical" href="https://no-gas-labs.github.io/nogaslabs-site/press/">
+ <meta name="robots" content="index,follow">
+ </head><body>
++  <a class="skip" href="#main">Skip to content</a>
+ <header class="wrap"><nav class="nav">
+   <a href="../">Home</a><a href="../about.html">About</a>
+   <a href="../press/">Press</a><a href="../relics/">Relics</a><a href="../campaign/">Campaign</a>
+diff --git a/press/kit.html b/press/kit.html
+index 554e93e..c2fdf18 100644
+--- a/press/kit.html
++++ b/press/kit.html
+@@ -4,6 +4,7 @@
+ <title>Press Kit — No_Gas_Labs</title>
+ <link rel="stylesheet" href="../site.css">
+ </head><body>
++  <a class="skip" href="#main">Skip to content</a>
+ <header class="wrap"><nav class="nav">
+   <a href="../">Home</a><a href="../about.html">About</a>
+   <a href="../press/">Press</a><a href="../relics/">Relics</a><a href="../campaign/">Campaign</a>
+diff --git a/relics/index.html b/relics/index.html
+index aafc773..7d84c76 100644
+--- a/relics/index.html
++++ b/relics/index.html
+@@ -6,6 +6,7 @@
+ <link rel="canonical" href="https://no-gas-labs.github.io/nogaslabs-site/relics/">
+ <meta name="description" content="Browse prototypes and artifacts from No_Gas_Labs.">
+ </head><body>
++  <a class="skip" href="#main">Skip to content</a>
+ <header class="wrap"><nav class="nav">
+   <a href="../">Home</a><a href="../about.html">About</a>
+   <a href="../press/">Press</a><a href="../relics/">Relics</a><a href="../campaign/">Campaign</a>
+diff --git a/scripts/link-check.sh b/scripts/link-check.sh
+new file mode 100755
+index 0000000..6573032
+--- /dev/null
++++ b/scripts/link-check.sh
+@@ -0,0 +1,19 @@
++#!/usr/bin/env python3
++import sys, os, re
++root = sys.argv[1] if len(sys.argv)>1 else '.'
++status = 0
++for dirpath, _, files in os.walk(root):
++    for name in files:
++        if not name.endswith('.html'):
++            continue
++        path = os.path.join(dirpath, name)
++        with open(path, 'r', encoding='utf-8') as f:
++            data = f.read()
++        for link in re.findall(r'href="([^"]+)"', data):
++            if link.startswith(('http', 'mailto:', '#')):
++                continue
++            target = os.path.normpath(os.path.join(root if link.startswith('/') else dirpath, link.lstrip('/')))
++            if not os.path.exists(target):
++                print(f"{path} -> missing {link}")
++                status = 1
++sys.exit(status)
+-- 
+2.43.0
+
+
+From 37bd56dcf4ed151445ca72795b857d24271d59b0 Mon Sep 17 00:00:00 2001
+From: Codex <codex@openai.com>
+Date: Tue, 29 Jul 2025 07:23:24 +0000
+Subject: [PATCH 2/2] seo(about): add canonical, robots, og tags
+
+---
+ STATUS.md             | 8 ++++----
+ TASKS_LOG.md          | 3 +++
+ about.html            | 7 +++++++
+ scripts/link-check.sh | 6 +++++-
+ 4 files changed, 19 insertions(+), 5 deletions(-)
+
+diff --git a/STATUS.md b/STATUS.md
+index b01994c..59dea23 100644
+--- a/STATUS.md
++++ b/STATUS.md
+@@ -1,7 +1,7 @@
+-Last task: 1
++Last task: 2
+ Last pass: PASS
+ Live URL: https://no-gas-labs.github.io/nogaslabs-site/
+ Next tasks:
+-2. Add canonical and robots meta to about.html.
+-3. Add OG tags to about.html.
+-4. Ensure robots/OG tags on all pages.
++3. Ensure robots meta and OG tags on other pages.
++4. Add aria-current script.
++5. Improve campaign copy.
+diff --git a/TASKS_LOG.md b/TASKS_LOG.md
+index f50803a..53707b6 100644
+--- a/TASKS_LOG.md
++++ b/TASKS_LOG.md
+@@ -3,3 +3,6 @@
+ 1. [SiteKeeper -> Production/Build] Added skip links to main pages for better keyboard navigation; added link check script.
+    Files: about.html, press/*.html, relics/index.html, campaign/index.html, press/index.html, press/kit.html, scripts/link-check.sh, STATUS.md, TASKS_LOG.md, REPORT.md
+    Result: PASS
++2. [SiteKeeper -> Production/Build] Added SEO meta tags to about page and improved link checker.
++   Files: about.html, scripts/link-check.sh, STATUS.md, TASKS_LOG.md
++   Result: PASS
+diff --git a/about.html b/about.html
+index bf7f3e6..690387f 100644
+--- a/about.html
++++ b/about.html
+@@ -3,6 +3,13 @@
+ <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+ <title>About — No_Gas_Labs</title>
+ <link rel="stylesheet" href="site.css">
++<link rel="canonical" href="https://no-gas-labs.github.io/nogaslabs-site/about.html">
++<meta name="robots" content="index,follow">
++<meta name="description" content="Background on Damien Edward Featherstone's public lab.">
++<meta property="og:title" content="About — No_Gas_Labs">
++<meta property="og:description" content="Learn about the mission and contact details.">
++<meta property="og:type" content="website">
++<meta property="og:url" content="https://no-gas-labs.github.io/nogaslabs-site/about.html">
+ </head><body>
+   <a class="skip" href="#main">Skip to content</a>
+ <header class="wrap"><nav class="nav">
+diff --git a/scripts/link-check.sh b/scripts/link-check.sh
+index 6573032..b9c5687 100755
+--- a/scripts/link-check.sh
++++ b/scripts/link-check.sh
+@@ -12,7 +12,11 @@ for dirpath, _, files in os.walk(root):
+         for link in re.findall(r'href="([^"]+)"', data):
+             if link.startswith(('http', 'mailto:', '#')):
+                 continue
+-            target = os.path.normpath(os.path.join(root if link.startswith('/') else dirpath, link.lstrip('/')))
++            link_path = link.lstrip('/')
++            if link_path.startswith('nogaslabs-site/'):
++                link_path = link_path[len('nogaslabs-site/'):]  # site root prefix
++            base = root if link.startswith('/') else dirpath
++            target = os.path.normpath(os.path.join(base, link_path))
+             if not os.path.exists(target):
+                 print(f"{path} -> missing {link}")
+                 status = 1
+-- 
+2.43.0
+
