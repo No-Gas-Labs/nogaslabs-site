@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Codex // Shrine v0.3</title>
+  <meta property="og:title" content="No_Gas_Labs™ – Gasless Is Godmode"/>
+  <meta property="og:description" content="Gasless Is Godmode"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://no-gas-labs.github.io/nogaslabs-site/codex/"/>
+  <link rel="icon" href="/assets/favicon.svg"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-mono">
+  <header class="sticky top-0 bg-neutral-950/90 backdrop-blur border-b border-neutral-800 z-50">
+    <div class="max-w-5xl mx-auto flex items-center justify-between p-4">
+      <a href="/" class="flex items-center"><img src="/assets/ngl-logo.svg" alt="NGL" class="h-8 w-8"/></a>
+      <div class="flex items-center gap-4">
+        <nav id="menu" class="hidden md:flex gap-6" aria-label="Primary">
+          <a href="#projects" class="hover:underline">Projects</a>
+          <a href="/join/" class="hover:underline">Join</a>
+          <a href="/faq/" class="hover:underline">FAQ</a>
+        </nav>
+        <button id="dark-toggle" class="hidden md:block" aria-label="Toggle dark mode">🌓</button>
+        <button id="campaign-toggle" class="hidden md:block" aria-label="Campaign mode">🎌</button>
+        <button id="menu-toggle" class="md:hidden" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+  <main class="max-w-3xl mx-auto p-4">
+    <h1 class="text-3xl mb-4">Codex</h1>
+    <div id="prompt" class="mb-4"></div>
+    <button id="reload" class="px-3 py-2 bg-neutral-800 rounded hover:bg-neutral-700">New Prompt</button>
+    <p class="mt-4"><a href="https://github.com/No-Gas-Labs/codex" class="text-sky-400 hover:underline">Codex on GitHub</a></p>
+  </main>
+  <footer class="bg-neutral-950 border-t border-neutral-800 mt-8">
+    <div class="max-w-5xl mx-auto p-4 text-sm text-neutral-400 flex flex-col gap-2 sm:flex-row sm:justify-between">
+      <div class="flex gap-4">
+        <a href="https://github.com/No-Gas-Labs" class="hover:underline">GitHub</a>
+        <a href="https://twitter.com" class="hover:underline">Twitter</a>
+        <a href="https://mirror.xyz" class="hover:underline">Mirror</a>
+        <a href="https://discord.com" class="hover:underline">Discord</a>
+      </div>
+      <div>© 2025 The Bastard's Echo. All gas has been eliminated.</div>
+    </div>
+  </footer>
+  <script src="/site.js"></script>
+  <script>
+    const prompts=[
+      'Build the tool that replaces itself.',
+      'What is the next recursion?',
+      'Document the code that documents you.'
+    ];
+    function show(){document.getElementById('prompt').textContent=prompts[Math.floor(Math.random()*prompts.length)];}
+    document.getElementById('reload').addEventListener('click',show);
+    show();
+  </script>
+</body>
+</html>

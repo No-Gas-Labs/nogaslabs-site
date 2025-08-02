@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Gas Fee Calculator // Shrine v0.3</title>
+  <meta property="og:title" content="No_Gas_Labs™ – Gasless Is Godmode"/>
+  <meta property="og:description" content="Gasless Is Godmode"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://no-gas-labs.github.io/nogaslabs-site/calculator/"/>
+  <link rel="icon" href="/assets/favicon.svg"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-mono flex items-center justify-center h-screen">
+  <main class="text-center">
+    <h1 class="text-3xl mb-4">Gas Fee Calculator</h1>
+    <input id="gas-input" class="border border-neutral-800 p-2 text-black" placeholder="Enter gas units">
+    <button id="calc" class="px-3 py-2 bg-sky-500 text-white rounded ml-2">Calc</button>
+    <div id="result" class="mt-4 text-2xl"></div>
+    <p class="mt-4 italic">Gas is a lie. Gas is a leash. We cut it.</p>
+  </main>
+  <script src="/site.js"></script>
+  <script>
+    document.getElementById('calc').addEventListener('click',()=>{
+      document.getElementById('result').textContent='$∞';
+    });
+  </script>
+</body>
+</html>
