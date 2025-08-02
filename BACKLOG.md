@@ -1,34 +1,17 @@
 # Backlog
 
 ## Short term
-- Task 1
-- Task 2
-- Task 3
-- Task 4
-- Task 5
-- Task 6
-- Task 7
-- Task 8
-- Task 9
-- Task 10
-- Task 11
-- Task 12
-- Task 13
+- Integrate Mirror Force into Telegram Bot
+- Develop Core Game Engine for Meme Physics
+- Deploy Smart Contracts for Mirror NFT & Reward Tokens
+- Integrate Blockchain Reward Logic in Game Outcomes
+- Perform QA, Unit Tests, Testnet Minting
 
 ## Mid term
-- Task 14
-- Task 15
-- Task 16
-- Task 17
-- Task 18
-- Task 19
-- Task 20
-- Task 21
-- Task 22
-- Task 23
-- Task 24
-- Task 25
-- Task 26
+- Add Real-Time Meme Events and Split-Physics Transitions
+- Add Analytics and Logging Hooks
+- Implement Referral Code Tracking and Rewards
+- Launch Tournament System + Leaderboards
 
 ## Long term
 - Task 27
