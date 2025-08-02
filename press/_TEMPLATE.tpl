@@ -13,7 +13,7 @@ Use scripts/new-press.sh for automation: ./scripts/new-press.sh 002 new-agenda
 </head><body>
 <header class="wrap"><nav class="nav">
   <a href="../">Home</a><a href="../about.html">About</a>
-  <a href="../press/">Press</a><a href="../relics/">Relics</a><a href="../campaign/">Campaign</a>
+  <a href="../press/">Press</a><a href="./feed.xml">RSS</a><a href="../relics/">Relics</a><a href="../campaign/">Campaign</a>
 </nav></header>
 <main class="wrap">
   <h1>{{HEADLINE}}</h1>
