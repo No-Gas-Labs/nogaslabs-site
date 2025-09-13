@@ -1,5 +1,7 @@
 # No_Gas_Labs — Official Shrine
 
+![build](https://github.com/No-Gas-Labs/nogaslabs-site/actions/workflows/ci.yml/badge.svg) ![license](https://img.shields.io/github/license/No-Gas-Labs/nogaslabs-site.svg)
+
 Static site for press releases, relics, and campaign info.
 
 Value proposition: Rebuild what breaks people and share the fixes.
@@ -54,3 +56,24 @@ Scripts
 ## Dynamic layer (Supabase)
 This site can sync game saves and provide an admin console using Supabase (Auth + Postgres).  
 Set `window.NGL_SUPABASE_URL` and `window.NGL_SUPABASE_ANON_KEY` before loading `/js/db.js`, or edit them inside that file. Admin access is granted via user metadata (`is_admin: true`) or app role `admin`. See `DOCS/SUPABASE.md`.
+
+## Project Overview
+Brief description of the repository and its purpose.
+
+## Setup
+Installation steps and prerequisites.
+
+## Environment
+List env variables and how to configure.
+
+## Scripts
+Common commands (build, lint, test, start).
+
+## Demo
+Add a GIF or link to a short demo.
+
+## Changelog
+See CHANGELOG.md for release history.
+
+## License
+See LICENSE for details.
